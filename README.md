@@ -38,9 +38,6 @@ And after that, the output itself will tell us how to connect passwordless to th
 
 
 
-
- 
-
 References:
 
     From Linux to Linux: https://levelup.gitconnected.com/how-to-connect-without-password-using-ssh-passwordless-9b8963c828e8
