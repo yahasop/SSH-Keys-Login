@@ -1,6 +1,7 @@
 # SSH-Keys-Login
 
 This guide is for connecting passwordless into another Linux instance, from both a Linux or Windows machine.
+
 <br>
 **Linux**
 
@@ -17,6 +18,7 @@ It will prompt for the password and in the end we will have the public key of th
 And after that, the output itself will tell us how to connect passwordless to the instance which will be with:
     
     ssh <user@ipadress-of-instance>
+
 <br>
 **Windows**
 
