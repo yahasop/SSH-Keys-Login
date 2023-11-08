@@ -3,7 +3,6 @@
 This guide is for connecting passwordless into another Linux instance, from both a Linux or Windows machine.
 
 **Linux**
-
 Generate a SSH key for sharing the public key of our local Linux machine using any shell to copy into the remote Linux instance
 
     ssh-keygen
@@ -19,7 +18,6 @@ And after that, the output itself will tell us how to connect passwordless to th
     ssh <user@ipadress-of-instance>
 
 **Windows**
-
 Generate a SSH key for sharing the public key of our local Windows machine using any shell to copy into the remote Linux instance
 
     ssh-keygen
