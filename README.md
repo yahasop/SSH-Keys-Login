@@ -3,7 +3,7 @@
 This guide is for connecting passwordless into another Linux instance, from both a Linux or Windows machine.
 
 <br>
-<strong>Linux</strong>
+<h1><strong>Linux</strong></h1>
 
 Generate a SSH key for sharing the public key of our local Linux machine using any shell to copy into the remote Linux instance
 
@@ -20,14 +20,14 @@ And after that, the output itself will tell us how to connect passwordless to th
     ssh "user@ipadress-of-instance"
 
 <br>
-<strong>Windows</strong>
+<h1><strong>Windows</strong></h1>
 
 Generate a SSH key for sharing the public key of our local Windows machine using any shell to copy into the remote Linux instance
 
     ssh-keygen
 
 We can skip when asked for a passphrase by typing enter 3 times. At the end an id_rsa.pub file will be generated into a hidden .ssh folder in our user's home folder.
-Since PowerShell doesn't have a native ssh-copy-id command in Windows we have to do it manually (copy the id_rsa.pub key and then log into our remote Linux machine and then copy the key into /home/"our-user"/.ssh/authorized_keys) or use this single line command. We have to replace the IP adresss of the instance and the user where {IP-ADDRESS-OR-FQDN} is:
+Since PowerShell doesn't have a native ssh-copy-id command in Windows we have to do it manually (copy the id_rsa.pub key and then log into our remote Linux machine and then copy the key into /home/"our-user"/.ssh/authorized_keys) or use this single line command. We have to replace the IP adresss of the instance and the user where "user@ipadress-of-instance" is:
 
     type $env:USERPROFILE\.ssh\id_rsa.pub | ssh "user@ipadress-of-instance" "cat >> .ssh/authorized_keys"
 
@@ -41,8 +41,6 @@ And after that, the output itself will tell us how to connect passwordless to th
 
 References:
 
-    From Linux to Linux: https://levelup.gitconnected.com/how-to-connect-without-password-using-ssh-passwordless-9b8963c828e8
-
-    From Windows to Linux: https://chrisjhart.com/Windows-10-ssh-copy-id/ 
-
-    Solutions on how to do it manually or with other methods: https://serverfault.com/questions/224810/is-there-an-equivalent-to-ssh-copy-id-for-windows 
+- From Linux to Linux: https://levelup.gitconnected.com/how-to-connect-without-password-using-ssh-passwordless-9b8963c828e8
+- From Windows to Linux: https://chrisjhart.com/Windows-10-ssh-copy-id/ 
+- Solutions on how to do it manually or with other methods: https://serverfault.com/questions/224810/is-there-an-equivalent-to-ssh-copy-id-for-windows
