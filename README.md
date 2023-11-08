@@ -14,7 +14,7 @@ Then we have to copy the generated key with from our linux instance to the remot
 
     ssh-copy-id "user@ipadress-of-instance"
 
-It will prompt for the password and in the end we will have the public key of the Linux machine into the authorized keys file of our linux machine.
+It will prompt for the password and in the end we will have the public key of the local Linux machine into the authorized keys file of our remote Linux machine.
 And after that, the output itself will tell us how to connect passwordless to the instance which will be with:
     
     ssh "user@ipadress-of-instance"
@@ -32,7 +32,7 @@ Since PowerShell doesn't have a native ssh-copy-id command in Windows we have to
     type $env:USERPROFILE\.ssh\id_rsa.pub | ssh "user@ipadress-of-instance" "cat >> .ssh/authorized_keys"
 
 The type command is an alias for the Get-Content cmdlet which outputs the content of a file. Then we pipe it to use the output as input of the next command and concatenating the contents into said authorized_keys file in the user's home directory.
-It will prompt for the password and in the end we will have the public key of the Linux machine into the authorized keys file of our Linux machine.
+It will prompt for the password and in the end we will have the public key of the local Windows machine into the authorized keys file of our remote Linux machine.
 And after that, the output itself will tell us how to connect passwordless to the instance which will be with:
     
     ssh "user@ipadress-of-instance"
