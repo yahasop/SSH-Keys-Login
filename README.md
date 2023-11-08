@@ -10,6 +10,7 @@ Generate a SSH key for sharing the public key of our local Linux machine using a
     ssh-keygen
 
 We can skip when asked for a passphrase by typing enter 3 times. At the end an id_rsa.pub file will be generated into a hidden .ssh folder in our user's home folder.
+
 Then we have to copy the generated key with from our linux instance to the remote linux instance with:
 
     ssh-copy-id "user@ipadress-of-instance"
@@ -33,6 +34,7 @@ Now, since PowerShell doesn't have a native ssh-copy-id command in Windows we ha
     type $env:USERPROFILE\.ssh\id_rsa.pub | ssh "user@ipadress-of-instance" "cat >> .ssh/authorized_keys"
 
 The type command is an alias for the Get-Content cmdlet which outputs the content of a file. Then we pipe it to use the output as input of the next command and concatenating the contents into said authorized_keys file in the user's home directory.
+
 It will prompt for the password and in the end we will have the public key of the local Windows machine into the authorized keys file of our remote Linux machine.
 And after that, the output itself will tell us how to connect passwordless to the instance which will be with:
     
