@@ -27,7 +27,8 @@ Generate a SSH key for sharing the public key of our local Windows machine using
     ssh-keygen
 
 We can skip when asked for a passphrase by typing enter 3 times. At the end an id_rsa.pub file will be generated into a hidden .ssh folder in our user's home folder.
-Since PowerShell doesn't have a native ssh-copy-id command in Windows we have to do it manually (copy the id_rsa.pub key and then log into our remote Linux machine and then copy the key into /home/"our-user"/.ssh/authorized_keys) or use this single line command. We have to replace the IP adresss of the instance and the user where "user@ipadress-of-instance" is:
+
+Now, since PowerShell doesn't have a native ssh-copy-id command in Windows we have to do it manually (generate and copy the id_rsa.pub key, log into our remote Linux machine and then copy the key into /home/"user"/.ssh/authorized_keys) or use this single line command. We have to replace the IP adresss of the instance and the user where "user@ipadress-of-instance" is:
 
     type $env:USERPROFILE\.ssh\id_rsa.pub | ssh "user@ipadress-of-instance" "cat >> .ssh/authorized_keys"
 
